@@ -60,6 +60,7 @@ namespace WindowsPhoneApp
 		private void btnSave_Click(object sender, RoutedEventArgs e)
 		{
 			newText(txtText.Text);
+			FillList();
 		}
 
 		public void newText(string text)
@@ -71,8 +72,6 @@ namespace WindowsPhoneApp
 			tekstDao.addTekst(tekst);*/
 			db.executeQuery(string.Format("insert into tekst values(null, '{0}');", text));
 			txtText.Text = "";
-
-			FillList();
 		}
 
 		private void FillList()
